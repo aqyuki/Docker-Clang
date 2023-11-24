@@ -1,0 +1,14 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    image: "dev"
+    container_name: "clang-dev-container"
+    volumes:
+      - type: bind
+        source: "."
+        target: "/dev-container"
+    stdin_open: true
+    tty: true
+    working_dir: "/dev-container/src/build"
